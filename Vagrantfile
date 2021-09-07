@@ -1,9 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# ### CS131 Development VM ###
+# ### CS33 Development VM ###
 # Feel free to modify this file to best work with your machine.
-#
+# 
 # For documentation, please see the comments here or go to
 # https://docs.vagrantup.com for more information.
 
@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     rm -fv /etc/ssh/ssh_host_*
     dpkg-reconfigure openssh-server
-
     apt-get update
+    sudo apt-get install make build-essential gdb git gcc-multilib python2.7 python3.8 python3-pip cscope figlet sysvbanner valgrind -y 
   SHELL
 end
